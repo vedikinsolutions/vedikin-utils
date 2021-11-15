@@ -1,0 +1,8 @@
+> url: https://snapnames.com/store/getStoreFrontPage.action?storeName=domainerPlus&sid=1629702669922
+> this code is use in eclips python 
+> for the first time you need to select workspace 
+> there are option to create project 
+> select new pydev project
+> then right click and select new package
+> there by default create a init.py file peast above file code in this file 
+> there is a download all domain in downloads 

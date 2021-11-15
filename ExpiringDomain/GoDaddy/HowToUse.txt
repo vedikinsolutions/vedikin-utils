@@ -1,0 +1,9 @@
+> url:https://in.auctions.godaddy.com/ 
+> this code is use in eclips python 
+> for the first time you need to select workspace 
+> there are option to create project 
+> select new pydev project
+> then right click and select new package
+> there by default create a init.py file peast above file code in this file 
+> there is a path there.change a path if you want to 
+> save all domain in path which you select in code  
