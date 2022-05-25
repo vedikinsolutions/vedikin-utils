@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\VedikIn Solutions\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\VedikIn Solutions\\.nuget\\packages"
+    ]
+  }
+}

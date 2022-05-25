@@ -1,0 +1,19 @@
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\bin\Debug\net5.0-windows\GD Reminder.exe
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\bin\Debug\net5.0-windows\GD Reminder.deps.json
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\bin\Debug\net5.0-windows\GD Reminder.runtimeconfig.json
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\bin\Debug\net5.0-windows\GD Reminder.runtimeconfig.dev.json
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\bin\Debug\net5.0-windows\GD Reminder.dll
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\bin\Debug\net5.0-windows\ref\GD Reminder.dll
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\bin\Debug\net5.0-windows\GD Reminder.pdb
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD Reminder.csproj.AssemblyReference.cache
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD_Reminder.Form1.resources
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD Reminder.csproj.GenerateResource.cache
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD Reminder.GeneratedMSBuildEditorConfig.editorconfig
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD Reminder.AssemblyInfoInputs.cache
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD Reminder.AssemblyInfo.cs
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD Reminder.csproj.CoreCompileInputs.cache
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD Reminder.dll
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\ref\GD Reminder.dll
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD Reminder.pdb
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\obj\Debug\net5.0-windows\GD Reminder.genruntimeconfig.cache
+C:\wamp64\www\git\gd-reminder\GD Reminder\GD Reminder\bin\Debug\net5.0-windows\reminderscript.vbs
