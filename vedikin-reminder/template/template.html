@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="fa/css/all.min.css" rel="stylesheet" />
+    <title></title>
+    <style>
+        @page {
+            margin: 0px;
+        }
+        
+        body {
+            margin: 0px;
+            background: url(##BACKGROUND_IMAGE##);
+        }
+        
+        .main_div {
+            width: 400px;
+            align-items: right;
+            vertical-align: middle;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 0px;
+        }
+        
+        .figure {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            background-color: none;
+        }
+        
+        .hr,
+        .brand-border {
+            border: 3px solid ##BRAND_COLOR##
+        }
+        
+        .brand-color {
+            color: ##BRAND_COLOR##
+        }
+        
+        .brand-background {
+            background: ##BRAND_COLOR##;
+        }
+        
+        .brand-background-border {
+            background: ##BRAND_COLOR##;
+             border-radius: 20px 20px 20px 20px;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        .fa {
+            display: inline;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 1;
+            font-family: FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="./template/css/bootstrap.min.css">
+    <script src="./template/js/bootstrap.min.js"></script> -->
+</head>
+
+
+<body>
+
+    <!-- <img src="template/icons/background.png"> -->
+    <div class="main_div">
+        <div style="text-align: center;margin-top: 10px;margin-bottom: -20px; width: 100%;">
+            <div style="width: 46%; text-align: center;  display: inline;">
+                <img src="##HEADER_ICON##" style="padding-bottom: 5px; height: 80px; max-height: 100px; max-width: 100%; width: auto; float:center;">
+            </div>
+            <hr style="width: 60%; color: white;">
+
+        </div>
+        <div style="width: 100%;text-align: left;padding-right: 10px;display: inline-block;vertical-align:text-bottom; margin-bottom:-20px">
+
+
+
+            <p style="
+                display: inline-block;
+                width: 15%;">
+
+            </p>
+            <p style="
+                display: inline-block;
+                width: 50%;
+                padding-bottom:10px;">
+                <span style="font-size: 22px; font-weight:bold; font-family:calibri;" class="brand-color">##FIRM_NAME##<br />
+                    <span style="font-size: 18px; font-weight:bold; font-family:calibri;" class="brand-color">##PERSON_NAME##</span><br/>
+                 <span style="font-size: 16px; font-family:calibri;" class="brand-color">##DESIGNATION##</span>
+                </span>
+            </p>
+            <div style="
+                display: inline-block;
+                width: 15%;
+                text-align: right;
+                 padding: 15px 0px;">
+                <a href="tel:##PHONE##" style="
+                    font-size: 35px;
+                    border-radius: 45px;">
+                    <img src="template/icons/CALL.png" height="40" width="40" class="brand-background-border">
+                </a>
+            </div>
+        </div>
+        <hr class="hr" style="margin-top:-50px;">
+        <div style=" clear:both; padding:0; margin:0;">
+            ##TABLE_DATA##
+        </div>
+        <div style="text-align: center; padding: 0; margin:0 ">
+            <!-- <img src="icons/footer-ribbon.png " style="margin-top: 20px; "> -->
+            <div style="width: 100%; margin:0; padding:0; ">
+                <hr class="hr ">
+            </div>
+            <!-- <img src="icons/point-icon.png " height="80 " style="padding-top: -30px; "> -->
+            <div style="text-align: center; ">
+                <!-- <i class="fa fa-hand-pointer brand-color " style="font-size: 35px; "></i> -->
+                <img src="template/icons/point.png" height="80">
+                <br />
+                <!-- <p style="font-size: 20px; font-family: calibri; letter-spacing: 3px; font-weight: bold; margin: 4px; " class="brand-color ">CLICK FOR DETAILS</p> -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
