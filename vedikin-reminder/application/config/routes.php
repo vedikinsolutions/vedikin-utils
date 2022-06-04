@@ -111,3 +111,5 @@ $route['update-history-delete/(:num)']='Controller_update_history/delete/$1';
 $route['search_update_history']='Controller_update_history/search_update_history';
 $route['update_history_delete_all'] = 'Controller_update_history/delete_all';
 
+$route['cron_job']='Controller_cron';
+

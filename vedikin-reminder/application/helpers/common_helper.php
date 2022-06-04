@@ -503,7 +503,7 @@ function send_mail($email, $subject, $message)
 
 	$ci->email->initialize($config);
 	$ci->email->set_mailtype("html");
-	$ci->email->from("test@thcitsolutions.com", "VedikIn Solutions");
+	$ci->email->from(FROM_EMAIL_ID, FROM_USER_NAME);
 	$ci->email->to($email);
 	$ci->email->subject($subject);
 	$ci->email->message($message);

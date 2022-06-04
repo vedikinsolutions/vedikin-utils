@@ -89,5 +89,7 @@ define('SITE_URL','http://localhost/git/vedikin-utils/vedikin-reminder/');
 define('ADMIN_PANEL_THEME_PATH',SITE_URL.'themes/admin_panel/');
 define('MENU_ICON_PATH',ADMIN_PANEL_THEME_PATH . 'images/menu_icons/');
 define('PER_PAGE_RECORD','15');
-
+define('TO_EMAIL_ID','test@thcitsolutions.com');  
+define('FROM_EMAIL_ID','test@thcitsolutions.com'); 
+define('FROM_USER_NAME','VedikIn Solutions');  
 define('DB_PREFIX','vdkn_');
