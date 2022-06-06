@@ -7,7 +7,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo ADMIN_PANEL_THEME_PATH; ?>dist/img/vedikin.jpg" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo ADMIN_PANEL_THEME_PATH; ?>dist/img/vedikin-favicon.png" />
     <link rel="stylesheet" href="<?php echo ADMIN_PANEL_THEME_PATH; ?>bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -22,7 +22,7 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-		<img src="<?php echo ADMIN_PANEL_THEME_PATH; ?>dist/img/logo.jpg" width="100%" />
+		<img src="<?php echo ADMIN_PANEL_THEME_PATH; ?>dist/img/vedikin-lg.png" width="100%" />
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to enter the Admin panel</p>
