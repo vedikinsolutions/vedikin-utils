@@ -6,6 +6,7 @@ class Update_history_model extends CI_Model
         $query=$this->db->select('update_history.update_history_id,reminder.reminder_title,update_history.next_reminder_date,update_history.modified_datetime,update_history.is_active,user_master.user_name')
                         ->join('reminder','reminder.reminder_id=update_history.reminder_id')
                         ->join('user_master','user_master.user_id=update_history.modified_by')
+                        ->limit($limit,$offset)
                         ->get('update_history');
         return $query->result();
     }
@@ -74,7 +75,7 @@ class Update_history_model extends CI_Model
 		}
     }
     public function get_reminders(){
-        $query=$this->db->get('reminder');
+        $query=$this->db->order_by('reminder_title','ASC')->get('reminder');
         return $query->result();
     }
 }

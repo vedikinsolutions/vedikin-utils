@@ -129,6 +129,7 @@ class Controller_reminder extends CI_Controller
         $ArrReminderData['page_title'] = 'Update Reminder';
         $ArrReminderData['view_name'] = 'view_'.$this->module_name.'_edit.php';
         $ArrReminderData['get_data'] = $this->reminder_model->getReminderById($reminder_id);
+        $ArrReminderData['get_history']=$this->reminder_model->get_history($reminder_id);
         if($this->session->userdata['logged_in']['user_role_id'] == 1)
         {
             $ArrReminderData['menus']=$this->menu_model->get_all_menu();

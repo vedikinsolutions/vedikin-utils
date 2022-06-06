@@ -60,6 +60,30 @@ if (!in_array("2", $user_rights)) {
    </div>
    <!-- /.box -->
 </div>
+<div class="row">
+<div class="col-md-12">
+   <?php if(count($get_history) > 0) { ?>
+   <table class="table">
+      <tr>
+         <th>Reminder</th>
+         <th>Next Reminder Date</th>
+         <th>Updated Date</th>
+         <th>Updated By</th>
+         <th>Is Active</th>
+      </tr>
+      <?php foreach($get_history as $history){?>
+      <tr>
+         <td><?php echo $history->reminder_title; ?></td>
+         <td><?php echo date('Y-m-d',strtotime($history->next_reminder_date)); ?></td>
+         <td><?php echo date('Y-m-d',strtotime($history->modified_datetime)); ?></td>
+         <td><?php echo $history->user_name; ?></td>
+         <td><?php echo $history->is_active; ?></td>
+      </tr>
+      <?php } ?>
+   </table>
+   <?php } ?>
+</div>
+</div>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <script>
   $( function() {

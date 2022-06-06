@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>VCard</title>
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<link rel="shortcut icon" type="image/x-icon" href="<?php echo ADMIN_PANEL_THEME_PATH; ?>dist/img/vcard_favicon.jpg" />
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo ADMIN_PANEL_THEME_PATH; ?>dist/img/vedikin-favicon.png" />
 	<link rel="stylesheet" href="<?php echo ADMIN_PANEL_THEME_PATH; ?>bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -42,7 +42,7 @@
 			<a href="#" class="logo">
 				<span class="logo-mini"><b>VC</b></span>
 				<!-- <span class="logo-lg" style="font-size: 15px; font-weight: bold;">VedikIn Solutions</span> -->
-				<span class="logo-lg" style="font-size: 15px; font-weight: bold;"><img src="<?php echo ADMIN_PANEL_THEME_PATH; ?>dist/img/logo.jpg" width="100%" height="50px" /></span>
+				<span class="logo-lg" style="font-size: 15px; font-weight: bold;"><img src="<?php echo ADMIN_PANEL_THEME_PATH; ?>dist/img/vedikin-lg.png" width="100%" height="50px" /></span>
 			</a>
 			<!-- Header Navbar -->
 			<nav class="navbar navbar-static-top" role="navigation">
