@@ -70,4 +70,30 @@ class Point_model extends CI_Model
         $query=$this->db->where('is_active','Y')->get('point_category');
         return $query->result();
     }
+    public function get_report_data()
+    {
+        $query=$this->db->select('SUM(points) AS total_points,user')->group_by('user')->get('points');
+        return $query->result();
+    }
+    public function get_report_filter_data()
+    {
+     
+        $query=$this->db->select('SUM(points) AS total_points,user');
+       
+        if($_POST['txtSearchKeyWord'] != "")
+        {
+            $query = $this->db->where('user',$_POST['txtSearchKeyWord'] );
+        } 
+        elseif($_POST['txtSearchFromDate'] != "")
+        {
+            $query = $this->db->where('date >',$_POST['txtSearchFromDate'] );
+        } 
+        elseif($_POST['txtSearchToDate'] != "")
+        {
+            $query = $this->db->where('date <',$_POST['txtSearchToDate'] );
+        }
+        $query =$this->db->group_by('user')->get('points');
+      
+        return $query->result();
+    }
 }

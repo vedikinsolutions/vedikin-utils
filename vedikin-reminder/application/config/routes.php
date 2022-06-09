@@ -128,5 +128,7 @@ $route['points-update/(:num)']='Controller_point/edit/$1';
 $route['points-delete/(:num)']='Controller_point/delete/$1';
 $route['search_points']='Controller_point/search_points';
 $route['points_delete_all'] = 'Controller_point/delete_all';
+$route['point-report-list'] = 'Controller_point/point_report';
+$route['points_filter'] = 'Controller_point/points_filter';
 
 
