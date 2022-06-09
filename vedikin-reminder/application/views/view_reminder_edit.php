@@ -41,8 +41,8 @@ if (!in_array("2", $user_rights)) {
                <div class="form-group">
                 <label>Is Active</label>
               <div class="radio">
-                     <label><input type="radio" name="is_active" id="is_active1" value="Y" checked>Yes</label>
-                     <label><input type="radio" name="is_active" id="is_active2" value="N" >No</label>
+                     <label><input type="radio" name="is_active" id="is_active1" value="Y" <?php echo $get_data[0]->is_active == 'Y' ?'checked':''; ?>>Yes</label>
+                     <label><input type="radio" name="is_active" id="is_active2" value="N" <?php echo $get_data[0]->is_active == 'N' ?'checked':''; ?>>No</label>
 
               </div>
               <input type="hidden" name="reminder_id" value="<?php echo $get_data[0]->reminder_id; ?>">

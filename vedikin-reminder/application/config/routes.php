@@ -113,3 +113,20 @@ $route['update_history_delete_all'] = 'Controller_update_history/delete_all';
 
 $route['cron_job']='Controller_cron';
 
+$route['point-category-list']='Controller_point_category';
+$route['point-category-list/(:num)']='Controller_point_category/index/$1';
+$route['point_category_add']='Controller_point_category/add';
+$route['point-category-update/(:num)']='Controller_point_category/edit/$1';
+$route['point-category-delete/(:num)']='Controller_point_category/delete/$1';
+$route['search_point_category']='Controller_point_category/search_point_category';
+$route['point_category_delete_all'] = 'Controller_point_category/delete_all';
+
+$route['points-list']='Controller_point';
+$route['points-list/(:num)']='Controller_point/index/$1';
+$route['points-add']='Controller_point/add';
+$route['points-update/(:num)']='Controller_point/edit/$1';
+$route['points-delete/(:num)']='Controller_point/delete/$1';
+$route['search_points']='Controller_point/search_points';
+$route['points_delete_all'] = 'Controller_point/delete_all';
+
+
