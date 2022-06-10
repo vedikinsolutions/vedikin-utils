@@ -261,4 +261,33 @@ class Controller_update_history extends CI_Controller
 			$results = $this->user_model->delete_all($ids);
 		}
     }
+    public function history_sorting($sort_by)
+    {
+        $field=$_GET['field'];
+        
+        $ArrHistoryData['page_title'] = 'Updated History List';
+       
+        $ArrHistoryData['button_url'] =  base_url() . $this->module_name.'_add';
+        
+		$ArrHistoryData['button_label'] = 'Add Updated History';
+        $ArrHistoryData['view_name'] = 'view_'.$this->module_name.'_list.php';
+      
+        
+        $ArrHistoryData['get_data']=$this->update_history_model->history_sorting($field,$sort_by);
+   
+       if($this->session->userdata['logged_in']['user_role_id'] == 1)
+       {
+           $ArrHistoryData['menus']=$this->menu_model->get_all_menu();
+       }
+       else
+       {
+           $ArrHistoryData['menus']=$this->menu_model->get_menu($this->session->userdata['logged_in']['user_role_id']);
+       }
+       
+        $this->load->view('admin_panel',$ArrHistoryData);
+          
+          
+           
+    
+    }
 }

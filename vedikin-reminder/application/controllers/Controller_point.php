@@ -48,10 +48,11 @@ class Controller_point extends CI_Controller
 		$ArrPointData['button_label'] = 'Add Point';
         $ArrPointData['view_name'] = 'view_'.$this->module_name.'_list.php';
         $start_index = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
-        
+        $user_id=$this->session->userdata['logged_in']['user_id'];
+        if($this->session->userdata['logged_in']['user_role_id'] == 13)
+            $ArrPointData['get_data'] = $this->point_model->get($config['per_page'],$start_index,$user_id);
+        else
         $ArrPointData['get_data'] = $this->point_model->get($config['per_page'],$start_index);
-        //$ArrUserData['menus']=$this->menu_model->get_all_menu();
-       // echo $this->db->last_query();exit;
        if($this->session->userdata['logged_in']['user_role_id'] == 1)
        {
            $ArrPointData['menus']=$this->menu_model->get_all_menu();
@@ -69,7 +70,7 @@ class Controller_point extends CI_Controller
         $ArrPointData['page_title'] = 'Add Point';
         $ArrPointData['view_name'] = 'view_'.$this->module_name.'_add.php';
         $ArrPointData['get_categories'] = $this->point_model->get_point_category();
-       
+        $ArrPointData['get_users'] = $this->point_model->get_user();
         if($this->session->userdata['logged_in']['user_role_id'] == 1)
         {
            $ArrPointData['menus']=$this->menu_model->get_all_menu();
@@ -94,7 +95,7 @@ class Controller_point extends CI_Controller
             }
             $data = array(
                 'point_category_id'=>$_POST['point_category'],
-                'user'=>$_POST['user_name'],
+                'user_id'=>$_POST['user_name'],
                 'points'=>$_POST['points'],
                 'date'=>$date,
                 'remarks'=>$_POST['remarks'],
@@ -123,6 +124,7 @@ class Controller_point extends CI_Controller
             $ArrPointData['page_title'] = 'Add Point';
             $ArrPointData['view_name'] = 'view_'.$this->module_name.'_add.php';
             $ArrPointData['get_categories'] = $this->point_model->get_point_category();
+            $ArrPointData['get_users'] = $this->point_model->get_user();
             if($this->session->userdata['logged_in']['user_role_id'] == 1)
             {
                $ArrPointData['menus']=$this->menu_model->get_all_menu();
@@ -140,6 +142,7 @@ class Controller_point extends CI_Controller
         $ArrPointData['page_title'] = 'Update Points';
         $ArrPointData['view_name'] = 'view_'.$this->module_name.'_edit.php';
         $ArrPointData['get_categories'] = $this->point_model->get_point_category();
+        $ArrPointData['get_users'] = $this->point_model->get_user();
         $ArrPointData['get_data'] = $this->point_model->getPointsById($point_id);
         if($this->session->userdata['logged_in']['user_role_id'] == 1)
         {
@@ -166,7 +169,7 @@ class Controller_point extends CI_Controller
             $point_id=$_POST['point_id'];
             $data = array(
                 'point_category_id'=>$_POST['point_category'],
-                'user'=>$_POST['user_name'],
+                'user_id'=>$_POST['user_name'],
                 'points'=>$_POST['points'],
                 'date'=>$date,
                 'remarks'=>$_POST['remarks'],
@@ -194,6 +197,7 @@ class Controller_point extends CI_Controller
             $ArrPointData['page_title'] = 'Update Point';
             $ArrPointData['view_name'] = 'view_'.$this->module_name.'_edit.php';
             $ArrPointData['get_data'] = $this->point_model->getPointById($_POST['point_id']);
+            $ArrPointData['get_users'] = $this->point_model->get_user();
             if($this->session->userdata['logged_in']['user_role_id'] == 1)
             {
                 $ArrPointData['menus']=$this->menu_model->get_all_menu();
@@ -238,6 +242,7 @@ class Controller_point extends CI_Controller
             $ArrPointData['page_title'] = 'Point List';
             $ArrPointData['button_url'] =  base_url() . $this->module_name.'-add';
             $ArrPointData['get_categories'] = $this->point_model->get_point_category();
+            $ArrPointData['get_users'] = $this->point_model->get_user();
             $ArrPointData['button_label'] = 'Add Point';
             if($this->session->userdata['logged_in']['user_role_id'] == 1)
             {
@@ -247,11 +252,11 @@ class Controller_point extends CI_Controller
             {
                 $ArrPointData['menus']=$this->menu_model->get_menu($this->session->userdata['logged_in']['user_role_id']);
             }
-          //  $ArrMenuData['menus']=$this->menu_model->get_menu($this->session->userdata['logged_in']['user_role_id']);
-            /*if($this->session->userdata['logged_in']['user_role_id'] == '3'){
-                $ArrAuditData['services']=$this->menu_model->get_services($this->session->userdata['logged_in']['entity_id']);
-            }*/
-            $ArrPointData['get_data']=$this->point_model->search_point($keyword);
+            $id=$this->session->userdata['logged_in']['user_id'];
+            if($this->session->userdata['logged_in']['user_role_id'] == 13)
+                $ArrPointData['get_data']=$this->point_model->search_point($keyword,$id);
+            else
+                $ArrPointData['get_data']=$this->point_model->search_point($keyword);
             //echo $this->db->last_query();exit;
             $ArrPointData['view_name'] = 'view_'.$this->module_name.'_list.php';
             
@@ -278,8 +283,10 @@ class Controller_point extends CI_Controller
         
 		//$ArrPointData['button_label'] = 'Add Point';
         $ArrPointData['view_name'] = 'view_'.$this->module_name.'_report.php';
-        
-        $ArrPointData['get_data'] = $this->point_model->get_report_data();
+        if($this->session->userdata['logged_in']['user_role_id'] == 13)
+            $ArrPointData['get_data'] = $this->point_model->get_report_data($this->session->userdata['logged_in']['user_id']);
+        else
+            $ArrPointData['get_data'] = $this->point_model->get_report_data();
         //$ArrUserData['menus']=$this->menu_model->get_all_menu();
       //  echo $this->db->last_query();exit;
        if($this->session->userdata['logged_in']['user_role_id'] == 1)
@@ -303,9 +310,10 @@ class Controller_point extends CI_Controller
                 
                 //$ArrPointData['button_label'] = 'Add Point';
                 $ArrPointData['view_name'] = 'view_'.$this->module_name.'_report.php';
-                
-                $ArrPointData['get_data'] = $this->point_model->get_report_filter_data();
-            
+                if($this->session->userdata['logged_in']['user_role_id'] == 13)
+                    $ArrPointData['get_data'] = $this->point_model->get_report_filter_data($this->session->userdata['logged_in']['user_id']);
+                else
+                    $ArrPointData['get_data'] = $this->point_model->get_report_filter_data();
             if($this->session->userdata['logged_in']['user_role_id'] == 1)
             {
                 $ArrPointData['menus']=$this->menu_model->get_all_menu();
@@ -321,5 +329,36 @@ class Controller_point extends CI_Controller
         {
             return  $this->point_report();
         }
+    }
+    public function points_report_sorting($sort_by)
+    {
+        $field=$_GET['field'];
+        
+        $ArrPointData['page_title'] = 'Point Report';
+       
+        $ArrPointData['button_url'] =  base_url() . $this->module_name.'_add';
+        
+		$ArrPointData['button_label'] = 'Add Point Report';
+        $ArrPointData['view_name'] = 'view_'.$this->module_name.'_report.php';
+      
+        if($this->session->userdata['logged_in']['user_role_id'] == 13)
+         $ArrPointData['get_data']=$this->point_model->point_report_sorting($field,$sort_by,$this->session->userdata['logged_in']['user_id']);
+        else
+        $ArrPointData['get_data']=$this->point_model->point_report_sorting($field,$sort_by);
+   
+       if($this->session->userdata['logged_in']['user_role_id'] == 1)
+       {
+           $ArrPointData['menus']=$this->menu_model->get_all_menu();
+       }
+       else
+       {
+           $ArrPointData['menus']=$this->menu_model->get_menu($this->session->userdata['logged_in']['user_role_id']);
+       }
+       
+        $this->load->view('admin_panel',$ArrPointData);
+          
+          
+           
+    
     }
 }

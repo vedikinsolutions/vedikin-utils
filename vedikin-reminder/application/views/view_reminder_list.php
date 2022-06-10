@@ -1,4 +1,21 @@
 <?php $user_rights = $this->session->userdata['user_rights']['reminder-list']; ?>
+<style>
+.sort_ASC:after {
+
+content: "▲";
+
+
+
+}
+
+
+
+.sort_DESC:after {
+
+content: "▼";
+
+}
+</style>
 <div class="row" id="row-container" style="display:none;">
 	<div class="col-xs-12">
 		<div class="box">
@@ -26,21 +43,21 @@
 					
 				</div> -->
 				<?php 
-				if (in_array("4", $user_rights)) { ?>
+				/*if (in_array("4", $user_rights)) { ?>
 					<button id="delete_selected" class="btn btn-primary">Delete</button>
-				<?php } ?>
+				<?php }*/ ?>
 					<table id="tblUserList" class="display nowrap dataTable no-footer table-responsive" cellspacing="0" width="100%">
 					<thead>
 					<tr>
 					<?php 
-						if (in_array("4", $user_rights)) { ?>
+						/*if (in_array("4", $user_rights)) { ?>
 							<th><input id="check_all" type="checkbox"></th>
-					<?php } ?>
+					<?php }*/ ?>
 					<th>Sr No</th>
-                    <th>Title</th>
-                    <th>Reminder Date</th>
-                    <th>Last Updated Date</th>
-					<th>Updated By</th>
+                    <th>Title <a href="<?php echo SITE_URL.'reminder_sorting/asc?field=reminder_title'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'reminder_sorting/desc?field=reminder_title'; ?>"><span class="sort_DESC"></a></th>
+                    <th>Reminder Date<a href="<?php echo SITE_URL.'reminder_sorting/asc?field=reminder_date'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'reminder_sorting/desc?field=reminder_date'; ?>"><span class="sort_DESC"></a></th>
+                    <th>Last Updated Date<a href="<?php echo SITE_URL.'reminder_sorting/asc?field=modified_datetime'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'reminder_sorting/desc?field=modified_datetime'; ?>"><span class="sort_DESC"></a></th>
+					<th>Updated By<a href="<?php echo SITE_URL.'reminder_sorting/asc?field=user_name'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'reminder_sorting/desc?field=user_name'; ?>"><span class="sort_DESC"></a></th>
 					<th>Is Active</th>
 					<th>Action</th>
 					</tr>
@@ -53,9 +70,9 @@
                         ?>
                         <tr>
 						<?php 
-							if (in_array("4", $user_rights)) { ?>
+							/*if (in_array("4", $user_rights)) { ?>
 							<td><input type="checkbox" name="row-check" class="delete_checkbox" value="<?php echo $users->user_id;?>"></td>
-						<?php } ?>
+						<?php }*/ ?>
 						<td><?php echo $i++; ?></td>
 						<td><?php echo $reminder->reminder_title; ?></td>
 						<td><?php echo date('Y-m-d',strtotime($reminder->reminder_date)); ?></td>

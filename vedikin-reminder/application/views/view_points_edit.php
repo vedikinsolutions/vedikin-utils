@@ -27,8 +27,12 @@ if (!in_array("2", $user_rights)) {
                </div>
 			   <div class="form-group">
                   <label for="user_name">User Name<span class="text text-danger">*</span></label>
-                  <input type="text" name="user_name" id="user_name" class="form-control" value="<?php echo $get_data[0]->user; ?>">
-                  <?php echo form_error('user_name', '<div class="error">', '</div>'); ?>
+                  <select name="user_name" id="user_name" class="form-control">
+                     <option>Select User</option>
+                     <?php foreach($get_users as $user){
+                       echo "<option value='".$user->user_id. "'" .($user->user_id == $get_data[0]->user_id ? 'selected':'').">".$user->user_name."</option>";
+                     } ?>
+                  </select>
                </div>
                <div class="form-group">
                   <label for="points">Points<span class="text text-danger">*</span></label>

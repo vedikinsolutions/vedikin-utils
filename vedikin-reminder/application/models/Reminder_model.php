@@ -79,5 +79,14 @@ class Reminder_model extends CI_Model
         return $query->result();
     
     }
+    public function reminder_sorting($field,$sort_by)
+    {
+        $query=$this->db->select('reminder.*,user_master.user_name')
+                        ->join('user_master','reminder.modified_by=user_master.user_id')
+                        ->order_by($field,$sort_by)                        
+                        ->get('reminder');
+         //echo $this->db->last_query();exit;
+        return $query->result();
+    }
 
 }

@@ -1,4 +1,21 @@
 <?php $user_rights = $this->session->userdata['user_rights']['points-list']; ?>
+<style>
+.sort_ASC:after {
+
+content: "▲";
+
+
+
+}
+
+
+
+.sort_DESC:after {
+
+content: "▼";
+
+}
+</style>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <div class="row" id="row-container" style="display:none;">
 	<div class="col-xs-12">
@@ -36,20 +53,20 @@
 			
 			<div class="box-body">
 				<?php 
-				if (in_array("4", $user_rights)) { ?>
+				/*if (in_array("4", $user_rights)) { ?>
 					<button id="delete_selected" class="btn btn-primary">Delete</button>
-				<?php } ?>
+				<?php }*/ ?>
 					<table id="tblUserList" class="display nowrap dataTable no-footer table-responsive" cellspacing="0" width="100%">
 					<thead>
 					<tr>
 					<?php 
-						if (in_array("4", $user_rights)) { ?>
+						/*if (in_array("4", $user_rights)) { ?>
 							<th><input id="check_all" type="checkbox"></th>
-					<?php } ?>
+					<?php }*/ ?>
 					<th>Sr No</th>
-                    <th>User</th>
+                    <th>User<a href="<?php echo SITE_URL.'point_report_sorting/asc?field=user_master.user_name'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'point_report_sorting/desc?field=user_master.user_name'; ?>"><span class="sort_DESC"></a></th>
                    
-					<th>Points</th>
+					<th>Points<a href="<?php echo SITE_URL.'point_report_sorting/asc?field=points.points'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'point_report_sorting/desc?field=points.points'; ?>"><span class="sort_DESC"></a></th>
 					
 					</tr>
                     </thead>
@@ -61,11 +78,11 @@
                     ?>
 					<tr>
 						<?php 
-							if (in_array("4", $user_rights)) { ?>
+							/*if (in_array("4", $user_rights)) { ?>
 							<td><input type="checkbox" name="row-check" class="delete_checkbox" value="<?php echo $category->point_category_id;?>"></td>
-						<?php } ?>
+						<?php }*/ ?>
 						<td><?php echo $i++; ?></td>
-						<td><?php echo $points->user; ?></td>
+						<td><?php echo $points->user_name; ?></td>
 						<td><?php echo $points->total_points; ?></td>
 
 						

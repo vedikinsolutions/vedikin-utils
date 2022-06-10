@@ -60,7 +60,7 @@
 							<td><input type="checkbox" name="row-check" class="delete_checkbox" value="<?php echo $category->point_category_id;?>"></td>
 						<?php } ?>
 						<td><?php echo $i++; ?></td>
-						<td><?php echo $points->user; ?></td>
+						<td><?php echo $points->user_name; ?></td>
                         <td><?php echo $points->point_category_name; ?></td>
 						<td><?php echo $points->points; ?></td>
 						<td><?php echo getIsactiveButtonForList($points->is_active,$points->point_id,DB_PREFIX.'points','point_id'); ?></td>

@@ -1,4 +1,21 @@
 <?php $user_rights = $this->session->userdata['user_rights']['update-history-list']; ?>
+<style>
+.sort_ASC:after {
+
+content: "▲";
+
+
+
+}
+
+
+
+.sort_DESC:after {
+
+content: "▼";
+
+}
+</style>
 <div class="row" id="row-container" style="display:none;">
 	<div class="col-xs-12">
 		<div class="box">
@@ -37,10 +54,10 @@
 							<th><input id="check_all" type="checkbox"></th>
 					<?php }*/ ?>
 					<th>Sr No</th>
-                    <th>Reminder </th>
-                    <th>Next Reminder Date</th>
-                    <th>Updated Date</th>
-					<th>Updated By</th>
+                    <th>Reminder<a href="<?php echo SITE_URL.'history_sorting/asc?field=reminder.reminder_title'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'history_sorting/desc?field=reminder.reminder_title'; ?>"><span class="sort_DESC"></a> </th>
+                    <th>Next Reminder Date<a href="<?php echo SITE_URL.'history_sorting/asc?field=update_history.next_reminder_date'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'history_sorting/desc?field=update_history.next_reminder_date'; ?>"><span class="sort_DESC"></a></th>
+                    <th>Updated Date<a href="<?php echo SITE_URL.'history_sorting/asc?field=update_history.modified_datetime'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'history_sorting/desc?field=update_history.modified_datetime'; ?>"><span class="sort_DESC"></a></th>
+					<th>Updated By<a href="<?php echo SITE_URL.'history_sorting/asc?field=user_master.user_name'; ?>"><span class="sort_ASC"></a><a href="<?php echo SITE_URL.'history_sorting/desc?field=user_master.user_name'; ?>"><span class="sort_DESC"></a></th>
 					<th>Is Active</th>
 					<th>Action</th>
 					</tr>

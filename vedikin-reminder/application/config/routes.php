@@ -102,6 +102,7 @@ $route['reminder-update/(:num)']='controller_reminder/edit/$1';
 $route['reminder-delete/(:num)']='controller_reminder/delete/$1';
 $route['search_reminder']='controller_reminder/search_reminder';
 $route['reminder_delete_all'] = 'controller_reminder/delete_all';
+$route['reminder_sorting/(:any)'] = 'controller_reminder/reminder_sorting/$1';
 
 $route['update-history-list']='Controller_update_history';
 $route['update-history-list/(:num)']='Controller_update_history/index/$1';
@@ -110,6 +111,7 @@ $route['update-history-update/(:num)']='Controller_update_history/edit/$1';
 $route['update-history-delete/(:num)']='Controller_update_history/delete/$1';
 $route['search_update_history']='Controller_update_history/search_update_history';
 $route['update_history_delete_all'] = 'Controller_update_history/delete_all';
+$route['history_sorting/(:any)'] = 'Controller_update_history/history_sorting/$1';
 
 $route['cron_job']='Controller_cron';
 
@@ -130,5 +132,6 @@ $route['search_points']='Controller_point/search_points';
 $route['points_delete_all'] = 'Controller_point/delete_all';
 $route['point-report-list'] = 'Controller_point/point_report';
 $route['points_filter'] = 'Controller_point/points_filter';
+$route['point_report_sorting/(:any)']='Controller_point/points_report_sorting/$1';
 
 

@@ -224,12 +224,8 @@ class Controller_reminder extends CI_Controller
             {
                 $ArrReminderData['menus']=$this->menu_model->get_menu($this->session->userdata['logged_in']['user_role_id']);
             }
-          //  $ArrMenuData['menus']=$this->menu_model->get_menu($this->session->userdata['logged_in']['user_role_id']);
-            /*if($this->session->userdata['logged_in']['user_role_id'] == '3'){
-                $ArrAuditData['services']=$this->menu_model->get_services($this->session->userdata['logged_in']['entity_id']);
-            }*/
             $ArrReminderData['get_data']=$this->reminder_model->search_reminder($keyword);
-            //echo $this->db->last_query();exit;
+          
             $ArrReminderData['view_name'] = 'view_'.$this->module_name.'_list.php';
             
             $this->load->view('admin_panel',$ArrReminderData);
@@ -246,5 +242,28 @@ class Controller_reminder extends CI_Controller
 			$ids = explode(',', $_POST['ids']);
 			$results = $this->user_model->delete_all($ids);
 		}
+    }
+    public function reminder_sorting($sort_by)
+    {
+        $field=$_GET['field'];
+        
+            $ArrReminderData = array();
+            $ArrReminderData['page_title'] = 'Reminder List';
+            $ArrReminderData['button_url'] =  base_url() . $this->module_name.'-add';
+            $ArrReminderData['button_label'] = 'Add Reminder';
+            if($this->session->userdata['logged_in']['user_role_id'] == 1)
+            {
+                $ArrReminderData['menus']=$this->menu_model->get_all_menu();
+            }
+            else
+            {
+                $ArrReminderData['menus']=$this->menu_model->get_menu($this->session->userdata['logged_in']['user_role_id']);
+            }
+            $ArrReminderData['get_data']=$this->reminder_model->reminder_sorting($field,$sort_by);
+          
+            $ArrReminderData['view_name'] = 'view_'.$this->module_name.'_list.php';
+            
+            $this->load->view('admin_panel',$ArrReminderData);
+    
     }
 }
