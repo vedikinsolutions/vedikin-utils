@@ -26,7 +26,7 @@
 						</div> -->  
 						<div class="col-sm-2">
 							<input type="submit" class="btn btn-warning" name="searchSubmit" id="searchSubmit" value="Search">
-							<a href="<?php echo SITE_URL.'points-list';?>" class="btn btn-info">Reset</a>
+							<a href="<?php echo SITE_URL.'point-report-list';?>" class="btn btn-info">Reset</a>
 						</div>
 					</div>
 				</form>

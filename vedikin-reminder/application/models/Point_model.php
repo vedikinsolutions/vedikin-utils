@@ -82,15 +82,15 @@ class Point_model extends CI_Model
        
         if($_POST['txtSearchKeyWord'] != "")
         {
-            $query = $this->db->where('user',$_POST['txtSearchKeyWord'] );
+            $query = $this->db->where('user LIKE \'%'.$_POST['txtSearchKeyWord'].'%\'' );
         } 
-        elseif($_POST['txtSearchFromDate'] != "")
+        if($_POST['txtSearchFromDate'] != "")
         {
-            $query = $this->db->where('date >',$_POST['txtSearchFromDate'] );
+            $query = $this->db->where('date >=',$_POST['txtSearchFromDate'] );
         } 
-        elseif($_POST['txtSearchToDate'] != "")
+        if($_POST['txtSearchToDate'] != "")
         {
-            $query = $this->db->where('date <',$_POST['txtSearchToDate'] );
+            $query = $this->db->where('date <=',$_POST['txtSearchToDate'] );
         }
         $query =$this->db->group_by('user')->get('points');
       

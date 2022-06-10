@@ -295,25 +295,31 @@ class Controller_point extends CI_Controller
     }
     public function points_filter()
     {
-        $ArrPointData['page_title'] = 'Point Report';
-       
-        $ArrPointData['button_url'] =  base_url() . $this->module_name.'-add';
-        
-		//$ArrPointData['button_label'] = 'Add Point';
-        $ArrPointData['view_name'] = 'view_'.$this->module_name.'_report.php';
-        
-        $ArrPointData['get_data'] = $this->point_model->get_report_filter_data();
-        //$ArrUserData['menus']=$this->menu_model->get_all_menu();
-        echo $this->db->last_query();exit;
-       if($this->session->userdata['logged_in']['user_role_id'] == 1)
-       {
-           $ArrPointData['menus']=$this->menu_model->get_all_menu();
-       }
-       else
-       {
-           $ArrPointData['menus']=$this->menu_model->get_menu($this->session->userdata['logged_in']['user_role_id']);
-       }
-       
-        $this->load->view('admin_panel',$ArrPointData);
+            if($_POST['txtSearchKeyWord'] != "" || $_POST['txtSearchFromDate'] !="" || $_POST['txtSearchToDate'] !="")
+            {
+                $ArrPointData['page_title'] = 'Point Report';
+            
+                $ArrPointData['button_url'] =  base_url() . $this->module_name.'-add';
+                
+                //$ArrPointData['button_label'] = 'Add Point';
+                $ArrPointData['view_name'] = 'view_'.$this->module_name.'_report.php';
+                
+                $ArrPointData['get_data'] = $this->point_model->get_report_filter_data();
+            
+            if($this->session->userdata['logged_in']['user_role_id'] == 1)
+            {
+                $ArrPointData['menus']=$this->menu_model->get_all_menu();
+            }
+            else
+            {
+                $ArrPointData['menus']=$this->menu_model->get_menu($this->session->userdata['logged_in']['user_role_id']);
+            }
+            
+                $this->load->view('admin_panel',$ArrPointData);
+        }
+        else
+        {
+            return  $this->point_report();
+        }
     }
 }
